@@ -1,4 +1,4 @@
-const functions = require("../structs/functions.js");
+const functions = require("./functions.js");
 
 module.exports = async (ws) => {
   // create hashes

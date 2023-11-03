@@ -32,7 +32,7 @@ app.get(
     buildUniqueId[req.user.accountId] = req.query.bucketId.split(":")[0];
 
     res.json({
-      serviceUrl: "wss://pommesmitketchup.com:443",
+      serviceUrl: "ws://127.0.0.1",
       ticketType: "mms-player",
       payload: "69=",
       signature: "420=",

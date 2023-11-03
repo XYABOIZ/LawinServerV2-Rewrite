@@ -23,3 +23,5 @@
 -LawinServer and Proxy Server Status.
 <br>
 -Fmod and Beyond content (NX-Proxy).
+<br>
+-Joining gameservers using the matchmaker - check out the GameServer seciton in config.ini for more details
