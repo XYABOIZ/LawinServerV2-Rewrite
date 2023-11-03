@@ -7,6 +7,18 @@ const path = require("path");
 const { verifyToken, verifyClient } = require("../tokenManager/tokenVerify.js");
 const functions = require("../structs/functions.js");
 
+express.use((req, res, next) => {
+  // Get raw body in encoding latin1 for ClientSettings
+  if (req.originalUrl.includes('/fortnite/api/cloudstorage/user/') && req.method == "PUT") {
+      req.rawBody = "";
+      req.setEncoding("latin1");
+
+      req.on("data", (chunk) => req.rawBody += chunk);
+      req.on("end", () => next());
+  }
+  else return next();
+})
+
 let seasons = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ];
